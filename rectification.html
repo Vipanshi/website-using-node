@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Rectification Form Creation</title>
+		<meta name="viewport" content="width=device-width" initial-scale="1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjsmfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="scripted.js">
+</script>
+</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12" style="background-color:white"><img src="Delhi Metro.jpg" alt="Delhi Metro Logo" style="margin:20px 0px 25px 100px" height=110px></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12" style="background-color:#D00000"><h2 style="text-align:center"><Font color="white" font-style="Times New Roman" size="6">Fill this form stating rectification details of devices.</Font></h2></div>
+			</div><br>
+
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container">
+				  <div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					  <span class="sr-only">Toggle navigation</span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">DMRC</a>
+				  </div>
+				  <div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+					  <li class="active"><a href="/middle">Back</a></li>
+					  <li><a href="/">Logout</a></li>
+                      					  
+					  
+					 
+					</ul>
+				  </div><!--/.nav-collapse -->
+				</div>
+			  </nav>	
+		
+		<div class="container-fluid" >
+			<form name="myform" method="POST" action="/nacho" role="form" class="form-horizontal" style="background-color:#ccc" onsubmit="validate()">
+			<div class="form-group">
+				<label class="col-sm-2">ID:</label>
+				<div class="col-sm-3"><input name="id" min="1" class="form-control input-default" type="name" id="id" placeholder="ID" required ></div>
+				</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="rect">Rectification Time:</label>
+				<div class="col-sm-5"><input name="RectificationT" class="form-control input-default" type="text" id="rect" placeholder="Rectification Time" ></div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2" for="rdate">Rectification Date:</label>
+				<div class="col-sm-5"><input name="RectificationD" type="date" class="form-control input-default" id="rdate" placeholder="Rectification Date" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="duration">Duration:</label>
+				<div class="col-sm-5"><input name="Duration" class="form-control input-default" type="text" id="duration" placeholder="Duration" ></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="rdetails">Rectification Details:</label>
+				<div class="col-sm-5"><input name="RectificationDetails" class="form-control input-default" type="text" id="rdetails" placeholder="Rectification Details" required></div>
+			</div>
+			
+			<div class="form-group">
+			<label class="col-sm-2" for="attended">Attended By:</label>
+				<div class="col-sm-5"><input name="AttendingPerson"  class="form-control input-default"type="text" id="attended" placeholder="Attended By" required></div>
+			</div>
+			<div>
+				<div class="col-sm-12 text-right" >
+				<input type="submit"  class="btn btn-primary" value="Send" name="Submit" >
+				<input type="reset" class=" btn btn-default" value="Reset" name="Reset" >
+			</div>
+		</form>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Fault Form Creation</title>
+		<meta name="viewport" content="width=device-width" initial-scale="1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjsmfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="scipted.js">
+		</script>
+</head>
+<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12" style="background-color:white"><img src="Delhi Metro.jpg" alt="Delhi Metro Logo" style="margin:20px 0px 25px 100px" height=110px></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12" style="background-color:#D00000"><h2 style="text-align:center"><Font color="white" font-style="Times New Roman" size="6">Fill this form stating failure details of devices.</Font></h2></div>
+			</div>
+			 
+			
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container">
+				  <div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					  <span class="sr-only">Toggle navigation</span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">DMRC</a>
+				  </div>
+				  <div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+					  <li class="active"><a href="/middle">Back</a></li>
+					  <li><a href="/">Logout</a></li>
+                      					  
+					  
+					 
+					</ul>
+				  </div><!--/.nav-collapse -->
+				</div>
+			  </nav>
+		
+		<div class="container-fluid" >
+			<form action="/end" name="myform" role="form" class="form-horizontal" style="background-color:#cccccc"  method="post" onsubmit="return superValidate()">
+			<div class="form-group">
+				<label class="col-sm-2">ID:</label>
+				<div class="col-sm-3"><input name="id" min="1" class="form-control input-default" type="name" id="id" placeholder="ID" required ></div>
+				<label class="col-sm-2">Date:</label>
+				<div class="col-sm-3"><input name="Date" class="form-control input-default" id="date" type="date" placeholder="Date" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2">Line:</label>
+				<div class="col-sm-3"><input name="Line" class="form-control input-default" type="text" id="line" placeholder="Line" required></div>
+				<label class="col-sm-2" for="sec">Section:</label>
+				<div class="col-sm-3"><input name="Section" class="form-control input-default" type="text" id="sec" placeholder="Section" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="sname">Station Name:</label>
+				<div class="col-sm-5"><input name="StationName" class="form-control input-default" type="text" id="sname" placeholder="Station Name" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="ssname">Station Name(in short):</label>
+				<div class="col-sm-5"><input name="StationShortName" class="form-control input-default" type="text" id="ssname" placeholder="Station Name in short.." required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="stype">Select your System Type:</label>
+				<div class="col-sm-3">
+				<select name="SystemName" class="form-control input-default" type="text" value="" required>
+				<option value="-1" selected>Select your system....</option>
+				<option value="TELE">TELE</option>
+				<option value="AFC">AFC</option>
+				</select>
+				</div>
+				<label class="col-sm-2" for="sstype">Select your SubSystem:</label>
+				<div class="col-sm-3">
+				<select name="SubSystemName" class="form-control input-default" type="text" id="sstype" value="" required>
+				<option value="-1" selected>Select your Sub-System....</option>
+				<option value="UPS">UPS</option>
+				<option value="TVM">TVM</option>
+				<option value="Gate">GATE</option>
+				<option value="CCTV">CCTV</option>
+				<option value="TOM">TOM</option>
+				<option value="SC">SC</option>
+				<option value="AVM">AVM</option>
+				<option value="HHT">HHT</option>
+				<option value="Train Radio">TRAIN RADIO</option>
+				</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2"for="equipment">Equipment No:</label>
+				<div class="col-sm-5"><input name="Equipmentno" class="form-control input-default" type="text" id="equipment" placeholder="Equipment No." required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="eid">Equipment ID:</label>
+				<div class="col-sm-5"><input name="EquipmentID" class="form-control input-default" type="text" id="eid" placeholder="Equipment ID" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="gatetype" >Type of Gate:</label>
+				<div class="col-sm-1">ENTRY<input name="Gate_type" type="radio" value="ENTRY"></div>
+				<div class="col-sm-1">EXIT<input name="Gate_type" type="radio" value="EXIT"></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="ftime">Failure Time:</label>
+				<div class="col-sm-5"><input name="FailureT" class="form-control input-default" type="text" id="ftime" placeholder="Failure Time" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="fdescription">Failure Description:</label>
+				<div class="col-sm-5"><input name="FailureD" class="form-control input-default" type="text" id="fdescription" placeholder="Failure Description" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="sub">Sub Equipment:</label>
+				<div class="col-sm-5"><input name="SubEquipment" class="form-control input-default" type="text" id="sub" placeholder="Sub Equipment"></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="R/UR">R/UR:</label>
+				<div class="col-sm-1">R<input name="R_UR" type="radio" value="R" required></div>
+				<div class="col-sm-1">UR<input name="R_UR" type="radio"  value="UR" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="origin">Origin:</label>
+				<div class="col-sm-5"><input name="Origin" class="form-control input-default"type="text" id="origin" placeholder="Origin" required></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="reported">Reported By:</label>
+				<div class="col-sm-5"><input name="ReportingPerson" class="form-control input-default" type="text" id="reported" placeholder="Reported By" required></div>
+			</div>
+			<div>
+				<div class="col-sm-12 text-right" >
+				<input type="submit"  class="btn btn-primary" value="Submit" name="Submit" >
+				<input type="reset" class=" btn btn-default" value="Reset" name="Reset" >
+			</div>
+		</form>
+		</div>
+		</div>
+	</body>
+</html>
