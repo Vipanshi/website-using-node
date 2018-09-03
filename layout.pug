@@ -1,0 +1,124 @@
+html
+head
+     link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+     link(rel='stylesheet', href='https://mottie.github.io/tablesorter/css/theme.bootstrap.css')
+
+     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+     script(src='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+     script(src='https://mottie.github.io/tablesorter/js/jquery.tablesorter.js')
+     script(src='https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js')
+
+body  
+     script(type='text/javascript').
+        $(function() {
+          $("table.tablesorter").tablesorter({
+            sortList: [[0,0]],
+            // set bootstrap theme
+            theme : 'bootstrap',
+            // icon needed for bootstrap theme
+            headerTemplate : '{content} {icon}',
+            // uitheme widget needed to apply bootstrap
+            widgets : [ 'uitheme' ]
+          });
+        });
+     table#mytable.tablesorter(border="1px") 
+         thead 
+             tr
+                    th  id
+
+                    th  Date
+
+                    th  Line
+
+                    th   Section 
+
+                    th StationName 
+                    th StationShortName 
+                    th  SystemName
+
+                    th  SubSystemName 
+
+
+                    th  Equipmentno 
+
+
+                    th  EquipmentID 
+
+
+                    th  Gate_type 
+
+                    th  FailureT
+
+
+                    th  FailureD 
+
+
+                    th  SubEquipment 
+
+
+                    th  R_UR
+                
+                    th   RectificationT 
+
+
+                    th  Duration 
+
+
+                    th RectificationDetails 
+
+
+                    th  Origin 
+
+                    th ReportingPerson 
+
+
+                    th  AttendingPerson
+
+
+            
+         
+         tbody
+            each  User in  Users
+                 tr
+                        td #{User.id}
+                        td #{User.Date}
+                        td #{User.Line}
+                        td #{User. Section}
+                        td  #{User.StationName}
+                        td  #{User.StationShortName} 
+                        td  #{User.SystemName}
+                        td  #{User. SubSystemName} 
+                        td   #{User.Equipmentno} 
+                        td   #{User.EquipmentID}
+                        td   #{User.Gate_type} 
+                        td   #{User.FailureT} 
+                        td   #{User.FailureD} 
+                        td   #{User.SubEquipment} 
+                        td   #{User.R_UR} 
+                        td    #{User.RectificationT} 
+                        td   #{User.Duration} 
+                        td  #{User.RectificationDetails} 
+                        td   #{User.Origin} 
+                        td  #{User.ReportingPerson} 
+                        td   #{User.AttendingPerson}
+
+    
+
+
+         
+
+
+         
+
+
+
+
+         
+
+
+    
+    
+   
+
+    
+
